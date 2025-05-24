@@ -1,0 +1,20 @@
+meta {
+  name: create a ticket
+  type: http
+  seq: 5
+}
+
+post {
+  url: 127.0.0.1:8000/api/v1/ticket
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "flight_id": "3fe95547-b906-4f49-8905-0b0920532351",
+    "passenger_name":"Umut",
+    "passenger_surname":"Özkan",
+    "passenger_email": "umutumix@gmail.com"
+  }
+}

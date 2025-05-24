@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Dynamic Web Programming Final",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,18 @@
+meta {
+  name: login admin
+  type: http
+  seq: 8
+}
+
+post {
+  url: 127.0.0.1:8000/api/v1/admin/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username":"srumut",
+    "password":"umutozkan123"
+  }
+}

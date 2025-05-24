@@ -1,0 +1,22 @@
+meta {
+  name: create flight
+  type: http
+  seq: 6
+}
+
+post {
+  url: 127.0.0.1:8000/api/v1/flight
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "from_city": "06",
+    "to_city": "48",
+    "departure_time": "2025-05-24T14:00:00+03:00",
+    "arrival_time": "2025-05-24T15:30:00+03:00",
+    "price": 3925,
+    "seats_total": 250
+  }
+}
