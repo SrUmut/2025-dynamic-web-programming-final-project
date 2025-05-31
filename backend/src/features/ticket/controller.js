@@ -3,8 +3,14 @@ const { v4: uuidv4 } = require("uuid");
 
 exports.getAllTickets = async (req, res) => {
     const client = await getClient();
+    let query = "SELECT * FROM ticket";
+    const values = [];
+    if (req.query?.flight_id) {
+        query += " WHERE flight_id = $1";
+        values.push(req.query?.flight_id);
+    }
     try {
-        const result = await client.query("SELECT * FROM ticket");
+        const result = await client.query(query, values);
         res.send(result.rows);
     } catch (err) {
         console.error(err);
@@ -48,12 +54,11 @@ exports.addTicket = async (req, res) => {
                 passenger_email,
             ]
         );
-        res.send(result.rows);
-
         await client.query(
             "UPDATE flight SET seats_available = seats_available - 1 WHERE id = $1",
             [flight_id]
         );
+        res.status(200).json({ message: "Ticket added successfully" });
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Internal Server Error" });

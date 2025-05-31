@@ -4,7 +4,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --env-file=../.env ./src/server.js -e ejs,js,css,html,jpg,png,scss,.env"
+    "dev": "nodemon --env-file=../.env ./src/server.js -e ejs,js,css,html,jpg,png,scss,.env",
+    "start": "node --env-file=../.env ./src/server.js",
+    "insert_test_data": "node --env-file=../.env ./src/insert_test_data.js"
   },
   "author": "Umut Özkan",
   "license": "ISC",

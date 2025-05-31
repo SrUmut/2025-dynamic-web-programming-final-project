@@ -1,3 +1,9 @@
+<script setup>
+    import Navbar from "./components/Navbar.vue";
+    import Flights from './components/Flights.vue';
+</script>
+
 <template>
-    <h1>hi</h1>
+    <Navbar />
+    <Flights />
 </template>

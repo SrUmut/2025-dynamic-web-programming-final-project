@@ -1,7 +1,7 @@
 import { createApp } from "vue";
-import App from "./App.vue";
+import AdminDashboard from "./AdminDashboard.vue";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-createApp(App).mount("#app");
+createApp(AdminDashboard).mount("#admin-dashboard-app");
